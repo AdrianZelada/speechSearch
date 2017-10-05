@@ -1,0 +1,32 @@
+<div class="card col-md-12">
+  <div class="card-header">
+    Text Search ('yellow') ('phone')
+  </div>
+  <div class="card-body">
+    <form>
+      <div class="form-row align-items-center row">
+        <div class="col-auto col-md-8">
+          <label class="sr-only" for="inlineFormInputGroup">Search</label>
+          <div class="input-group mb-2 mb-sm-0">
+            <div class="input-group-addon">@</div>
+            <input type="text" class="form-control" [(ngModel)]="speechData" name="inlineFormInputGroup" id="inlineFormInputGroup" placeholder="Text">
+          </div>
+        </div>
+        <div class="col-auto col-md-4">
+          <!--<button type="submit" class="btn btn-primary" (click)="search()">Search</button>-->
+          <button type="submit" class="btn btn-primary" [disabled]="showSearchButton" (click)="activateSpeechSearch()">Talk</button>
+          <!--<button type="submit" class="btn btn-primary" (click)="disabledSpeechSearch()">Search</button>-->
+        </div>
+      </div>
+    </form>
+
+    <div>
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let item of results">{{item.name}}</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+
